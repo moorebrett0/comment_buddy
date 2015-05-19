@@ -1,47 +1,14 @@
 <?php
-    function comment_buddy_menu() {
-        $items = array();
-        $items['comment_buddy'] = array(
-            'title' => "Thanks for commenting!",
-            'page callback' => 'new_comment',
-            'access callback' => TRUE,
-            'type' => MENU_CALLBACK,
-        );
-        $items['comment_edit'] = array(
-            'title' => "You edited your comment!",
-            'page callback' => 'edit_comment',
-            'access callback' => TRUE,
-            'type' => MENU_CALLBACK,
-        );
-        $items['comment_delete'] = array(
-            'title' => "You deleted your comment!",
-            'page callback' => "delete_comment",
-            'access callback' => TRUE,
-            'type' => MENU_CALLBACK,
-        );
-        return $items;
-    }
-
-    function new_comment() {
-        return '<p>You are about to make a comment!</p>';
-    }
-
-    function edit_comment() {
-        return '<p>You edited a comment!</p>';
-    }
-
-    function delete_comment() {
-        return '<p>You deleted a comment!</p>';
-    }
 
     function comment_buddy_comment_update() {
-        $_GET['destination'] = 'comment_edit';
+        return drupal_set_message('You edited your comment!');
     }
 
     function comment_buddy_comment_insert() {
-        $_GET['destination'] = 'comment_buddy';
+        return drupal_set_message('YOU CREATED A NEW COMMENT!!!');
     }
 
+
     function comment_buddy_comment_delete() {
-        $_GET['destination'] = 'comment_delete';
+        return drupal_set_message('You DELETED YOUR COMMENT!');
     }
