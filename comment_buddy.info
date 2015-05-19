@@ -1,0 +1,5 @@
+name = Comment_buddy
+description = displays messages to a user when comments are created.
+package = Brett and Brian's creations
+core = 7.x
+files[] = comment.module
